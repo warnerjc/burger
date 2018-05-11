@@ -16,6 +16,16 @@ router.get("/", function (req, res) {
     });
 });
 
+router.get("/api/burgers", function (req, res) {
+    burger.all(function (data) {
+        let hbsObject = {
+            burgers: data
+        };
+        console.log(hbsObject);
+        res.json(hbsObject);
+    });
+});
+
 router.post("/api/burgers", function (req, res) {
     burger.create(["burger_name"], [req.body.burgerName], function (result) {
         // Send back the ID of the new burger

@@ -1,0 +1,88 @@
+body {
+    font-family: 'Vampiro One', cursive;
+}
+
+#main-bkgrnd {
+    background: url("/assets/img/flowers.jpg");
+    height: calc(100vh - 136px);
+}
+
+.container {
+    color: #e2555b;
+}
+
+.row {
+    width: 100%;
+    text-align: center;
+}
+
+.col {
+    text-align: center;
+}
+
+#app-name {
+    text-align: center;
+    font-size: 5em;
+    margin: 20px 0 20px 0;
+}
+
+#app-link {
+    text-decoration: none;
+    color: #42c6c8;
+}
+
+#app-link:hover {
+    color: #71ced3;
+}
+
+#api-name {
+    text-align: center;
+    font-size: 1em;
+    margin: 20px 0 20px 0;
+}
+
+#api-link {    
+    text-decoration: none;
+    color: #42c6c8;
+}
+
+#api-link:hover {
+    color: #71ced3;
+}
+
+.jumbotron {
+    margin: 32px;
+    padding: 32px;
+    background-color: white;
+    opacity: 0.85;
+}
+
+.row-burger {
+    padding: 5px;
+    text-align: left;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+ }
+
+ .my-4 {
+    border-top: 2px solid #f6dc0b;
+ }
+
+ .btn-primary {
+    background-color: #42c6c8;
+    border-color: #42c6c8;
+ }

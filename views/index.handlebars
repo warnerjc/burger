@@ -1,23 +1,71 @@
-<h1>Eat-Da-Burgers!</h1>
+<header class="row justify-content-center">
+    {{!-- Empty Col --}}
+    <div class="col-2"></div>
+    {{!-- Application Title Header Col --}}
+    <div class="col-8">
+        <h1 id="app-name">
+            <a id="app-link" href="/">Eat-Da-Burgers!</a>
+        </h1>
+    </div>
+    {{!-- Application API Links Col --}}
+    <div class="col-2 align-self-end">
+        <h1 id="api-name">
+            <a id="api-link" href="/api/burgers">Burgers API</a>
+        </h1>
+    </div>
+</header>
 
-<h2>All Available Burgers</h2>
+<main id="main-bkgrnd">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col jumbotron">
+                <h3>Available Burgers</h3>
+                <hr class="my-4">
 
-<ul>
-    {{#each burgers}}
-        <li>{{id}}, {{burger_name}}, {{devoured}}</li>
-    {{/each}}
-</ul>
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        <div class="row row-burger">
+                            <div class="col-9">
+                                {{burger_name}}
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-sm btn-primary change-devoured" data-id="{{id}}">
+                                Eat Me!
+                                </button>
+                            </div>
+                        </div>
+                    {{/unless}}
+                {{/each}}
 
-<br>
-<br>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-    <div class="form-group">
-        <label for="burger">Burger Name:</label>
-        <input type="text" id="new-burger" name="burgerName">
+            </div>
+            <div class="col jumbotron">
+                <h3>Devoured Favorites</h3>
+                <hr class="my-4">
+                <ul>
+                    {{#each burgers}}
+                        {{#if devoured}}
+                            <div class="row row-burger">
+                            <div class="col">
+                                {{burger_name}}
+                            </div>
+                        </div>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col jumbotron">
+                <h2>Name Your Burger</h2>
+                <hr class="my-4">
+                <form class="create-form">
+                    <div class="form-group">
+                        <input type="text" id="new-burger" name="burgerName" placeholder="Name Your Burger">
+                    </div>
+                    <button type="submit">Add Burger</button>
+                </form>
+            </div>
+        </div>
     </div>
 
-    <button type="submit">Add Burger</button>
-</form>
+</main>

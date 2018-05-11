@@ -76,7 +76,7 @@ let orm = {
 
     },
 
-    updateOne: function () {
+    updateOne: function (table, objColVals, condition, cb) {
         let queryString = "UPDATE " + table;
 
         queryString += " SET ";
